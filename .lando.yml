@@ -1,0 +1,16 @@
+
+name: 'devfrost-d8-labs'
+recipe: 'drupal8'
+config:
+  php: '7.2'
+  via: nginx:latest
+  webroot: 'web'
+  database: mariadb
+  drush: '*'
+  xdebug: true
+services:
+  mailhog-service:
+    type: mailhog:v1.0.0
+    portforward: false
+    hogfrom:
+      - appserver
